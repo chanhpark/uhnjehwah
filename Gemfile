@@ -13,14 +13,14 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise'
 gem 'foundation-rails'
 gem 'json'
-gem 'dotenv'
-gem 'pry-rails'
-
 
 group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'
   gem 'spring'
+  gem 'dotenv-rails'
+  gem 'pry-rails'
+  gem 'pry'
 end
 
 gem 'rspec-rails', group: [:development, :test]
@@ -29,3 +29,7 @@ gem 'launchy', group: [:development, :test]
 gem 'factory_girl', group: [:development, :test]
 gem 'valid_attribute', group: [:development, :test]
 gem 'shoulda-matchers', group: [:development, :test], require: false
+
+group :production do
+  gem 'rails_12factor'
+end
