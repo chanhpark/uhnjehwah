@@ -1,4 +1,15 @@
+require 'net/http'
+require 'uri'
+
 class StopsController < ApplicationController
+  def show
+    stop = Stop.find(params[:id])
+    station = stop.parent_station
+    api_key = ENV["API_KEY"]
+    uri = URI("http://realtime.mbta.com/developer/api/v2/predictionsbystop?api_key=#{api_key}&stop=#{station}&format=json")
+    response = Net::HTTP.get(uri)
+    @station_data = JSON.parse(response)
+  end
 
   def new
     @stop = Stop.new
