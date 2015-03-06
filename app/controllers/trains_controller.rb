@@ -1,12 +1,11 @@
-class StopsController < ApplicationController
-
+class TrainsController < ApplicationController
   def new
-    @stop = Stop.new
+    @train = Train.new
   end
 
   def create
-    @stop = Stop.new(stop_params)
-    if @stop.save
+    @train = Train.new(train_params)
+    if @train.save
       redirect_to root_path
     else
       render :new
@@ -15,7 +14,7 @@ class StopsController < ApplicationController
 
   private
 
-  def stop_params
-    params.require(:stop).permit(:name, :train_id, :parent_station)
+  def train_params
+    params.require(:train).permit(:name)
   end
 end
