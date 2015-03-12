@@ -6,7 +6,6 @@ class HomesController < ApplicationController
     blue = Train.find_by(name: "Blue")
     @bluestops = Stop.where(train_id: blue.id)
 
-
     orange = Train.find_by(name: "Orange")
     @orangestops = Stop.where(train_id: orange.id)
   end
