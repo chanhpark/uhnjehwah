@@ -9,7 +9,6 @@ class StopsController < ApplicationController
     uri = URI("http://realtime.mbta.com/developer/api/v2/predictionsbystop?api_key=#{api_key}&stop=#{station}&format=json")
     response = Net::HTTP.get(uri)
     @station_data = JSON.parse(response)
-    binding.pry
   end
 
   def new
