@@ -2,6 +2,7 @@ require 'net/http'
 require 'uri'
 
 class StopsController < ApplicationController
+
   def show
     stop = Stop.find(params[:id])
     station = stop.parent_station
