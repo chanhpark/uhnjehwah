@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 ruby "2.0.0"
 
-
+gem 'devise'
 gem 'foundation-rails'
 gem 'rails', '4.2.0'
 gem 'pg'
